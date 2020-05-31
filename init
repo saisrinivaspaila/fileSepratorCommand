@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 cp fileSeperate "/usr/bin"
 echo "Now you can use the command
 Just got to some directory and tryout this command"

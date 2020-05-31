@@ -23,5 +23,6 @@ do
     extension=${i:$ind+1};
     extension=${extension^}
     folderName=$extension" Files"
-    echo $filename $folderName;
+
+    
 done
