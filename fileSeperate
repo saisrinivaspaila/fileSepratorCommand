@@ -1,0 +1,27 @@
+#!/bin/bash
+files=$(ls)
+for i in $files
+do
+    ind=0
+    if [ -d $i ];
+    then
+        continue;
+    elif [ $i = "fileSeperate" -o $i = "README.md" ];
+    then
+        continue;
+    else
+        for((j=0;j<${#i};j++));
+        do 
+            dot1="${i:$j:1}";
+            if [ $dot1 = '.' ];
+            then 
+                ind=$j;
+            fi 
+        done
+    fi
+    filename=$i
+    extension=${i:$ind+1};
+    extension=${extension^}
+    folderName=$extension" Files"
+    echo $filename $folderName;
+done
