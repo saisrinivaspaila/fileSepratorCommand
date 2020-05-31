@@ -6,10 +6,11 @@ do
     if [ -d $i ];
     then
         continue;
-    elif [ $i = "fileSeperate" -o $i = "README.md" ];
+    elif [ $i = "fileSeperate" -o $i = "init" -o $i = "README.md" ];
     then
         continue;
     else
+        # echo $i;
         for((j=0;j<${#i};j++));
         do 
             dot1="${i:$j:1}";
@@ -22,7 +23,7 @@ do
     filename=$i
     extension=${i:$ind+1};
     extension=${extension^}
-    folderName=$extension" Files"
-
-    
+    folderName=$extension"Files"
+    mkdir -p -- "$folderName"
+    sudo mv $filename "/$folderName"
 done
